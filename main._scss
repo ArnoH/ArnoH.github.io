@@ -1,0 +1,37 @@
+---
+---
+
+@import "{{ site.theme }}";
+/*@import "pygments-github-dark.css";*/
+
+body {
+    background-color: #30302e;
+    color: #e2dacd;
+}
+.highlight, .highlight pre, .highlight table {
+    background: #353533 !important;
+    border-color: #515350;
+    color: #d0d0d0 !important;
+}
+pre, code {
+    background-color: #353533 !important;
+    border-color: #515350;
+}
+
+.site-nav .page-link {
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: #c0c0c0;
+    padding: 7px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a {
+    color: #2a8a15 !important;
+}
+
+a:hover {
+    color: #9bd57e !important;
+}
+
