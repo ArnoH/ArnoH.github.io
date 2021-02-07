@@ -500,17 +500,13 @@ With this structure in place, we can fill it in now.
     inc ebx ; Stage 2 starts from the second sector of the file
     mov dword [diskAddressPacket+DAP.sector], ebx
 
-    mov ebx, dword [bi_length]
-	
-    ; Round up to multiple of sector size
-    xor ax, ax
-    test bx, 2047
-    setnz al
-    
+    mov eax, dword [bi_length]
+
+    ; Force rounding up to multiple of sector size
+    add eax, 2047
     ; Divide by sector size
-    shr ebx, 11
-    add ax, bx
-    ; Now ax contains the total number of sectors in the file
+    shr eax, 11
+    ; Now ax contains the number of sectors to in the file
 
     ; Subtract the first sector because that is this file
     dec ax
